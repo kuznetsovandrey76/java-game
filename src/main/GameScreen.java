@@ -4,10 +4,9 @@ import javax.swing.JPanel;
 import java.awt.*;
 
 public class GameScreen extends JPanel {
-    private final Render render;
-
+    private final Game game;
     public GameScreen(Game game) {
-        render = new Render();
+        this.game = game;
         setPanelSize();
     }
     public void setPanelSize() {
@@ -19,6 +18,6 @@ public class GameScreen extends JPanel {
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        render.render(g);
+        game.getRender().render(g);
     }
 }
